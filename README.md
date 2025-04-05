@@ -1,31 +1,47 @@
-Compresor Huffman en C++
-Compresor y descompresor de archivos basado en el algoritmo de Huffman implementado en C++. Permite comprimir archivos de texto a formato binario (.huff) y descomprimirlos a su forma original.
+# Compresor Huffman en C++
 
-Requisitos
-Compilador g++ compatible con C++17
+Este proyecto es un compresor y descompresor de archivos de texto utilizando el algoritmo de **Huffman**. Permite reducir el tamaño de archivos `.txt` mediante compresión binaria y guardarlos con la extensión `.huff`. También permite descomprimir estos archivos para recuperar el texto original.
 
-Sistema Windows con MinGW-w64 instalado
+## Características
 
-Instalación
-Descargar MinGW-w64 desde winlibs.com
+- Compresión de archivos de texto usando Huffman
+- Generación y serialización del diccionario de códigos Huffman
+- Almacenamiento de archivos comprimidos en formato binario `.huff`
+- Descompresión desde `.huff` a `.txt`
+- Interfaz de consola amigable
+- Manejo de errores robusto
 
-Añadir la ruta de instalación a las variables de entorno del sistema
+## Estructura del archivo `.huff`
 
-Compilación
-Compilar el proyecto con:
+Cada archivo comprimido `.huff` contiene:
 
-Copy
-g++ -std=c++17 -o huffman main.cpp HuffmanNode.cpp
-Uso
-Ejecutar el programa:
+1. **Tamaño del diccionario** (`size_t`)
+2. **Diccionario serializado** (en formato `ASCII:codigo;`)
+3. **Datos comprimidos** (en formato binario)
 
-Copy
-./huffman
-El menú ofrece estas opciones:
+## Uso y Funcionamiento
 
-Comprimir archivo de texto a .huff
+---------- COMPRESOR DE HUFFMAN ----------
+1. Comprimir archivo
+2. Descomprimir archivo
+0. Salir
+Seleccione una opcion:
 
-Descomprimir archivo .huff a texto
+### Comprimir
+- El usuario ingresa la dirección del txt.
+- Crea la tabla de frecuencias de los caracteres.
+- Crea el arbol binario de Huffman.
+- Extrae los codigos del arbol a un diccionario.
+- Traduce el txt a codigos usando el diccionario.
+- Pasa los codigos a bytes.
+- Escribe los codigos y el diccionario en un archivo .huff
 
-Salir del programa
+### Desomprimir
+- El usuario ingresa la dirección del .huff
+- Se extrae el diccionario de los codigos.
+- Se pasa el resto del archivo de bytes a 1s y 0s.
+- Se traducen los 1s y 0s del archivo usando el diccionario.
+- Se escribe el texto recuperado en un archivo_descomprimido.txt. 
 
+## Autor
+Alejandro Amador Ruiz - aleamador2003@gmail.com
