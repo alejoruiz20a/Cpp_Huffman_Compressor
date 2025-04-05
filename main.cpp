@@ -241,10 +241,10 @@ void guardarArchivoTexto(const string& ruta, const string& contenido) {
 }
 
 void mostrarMenu() {
-    cout << "\nCompresor Huffman" << endl;
+    cout << "\n---------- COMPRESOR DE HUFFMAN ----------" << endl;
     cout << "1. Comprimir archivo" << endl;
     cout << "2. Descomprimir archivo" << endl;
-    cout << "3. Salir" << endl;
+    cout << "0. Salir" << endl;
     cout << "Seleccione una opcion: ";
 }
 
@@ -277,8 +277,8 @@ int main() {
                     guardarArchivoComprimido(nombreSalida, resultado);
                     
                     cout << "Archivo comprimido guardado como: " << nombreSalida << endl;
-                    cout << "Tamaño original: " << contenido.size() << " bytes" << endl;
-                    cout << "Tamaño comprimido: " << resultado.msg.size() << " bytes" << endl;
+                    cout << "Tamanio original: " << contenido.size() << " bytes" << endl;
+                    cout << "Tamanio comprimido: " << resultado.msg.size() << " bytes" << endl;
                     break;
                 }
                 case 2: { // Descomprimir
@@ -297,7 +297,7 @@ int main() {
                     break;
                 }
                 case 0: // Salir
-                    cout << "Saliendo del programa..." << endl;
+                    cout << "Saliendo del programa... DEV: Alejandro Amador Ruiz" << endl;
                     break;
                 default:
                     cout << "Opcion no valida. Intente nuevamente." << endl;
